@@ -5,9 +5,9 @@ const lines = getDataLines();
 /**
  * Computes the number of times the dial of the safe reached exactly 0.
  *
- * @returns The number of times the dial of the safe reached exactly 0.
+ * @returns {number} The number of times the dial of the safe reached exactly 0.
  */
-const secretEntrancePart1 = () => {
+const secretEntrancePart1 = (): number => {
   let currentPosition = 50;
   return lines.reduce((acc, line) => {
     const direction = line.charAt(0);
@@ -24,7 +24,7 @@ const secretEntrancePart1 = () => {
 /**
  * Computes the number of times the dial of the safe passed by 0.
  *
- * @returns The number of times the dial of the safe passed by 0.
+ * @returns {number} The number of times the dial of the safe passed by 0.
  */
 const secretEntrancePart2 = (): number => {
   let currentPosition = 50;
