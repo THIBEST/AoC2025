@@ -20,4 +20,16 @@ const modulo = (n: number, m: number): number => {
   return ((n % m) + m) % m;
 };
 
-export { getDataLines, modulo };
+/**
+ * Returns the maximum value in an array and its index.
+ *
+ * @param arr - The array to search.
+ * @returns An object containing the maximum value and its index.
+ */
+const getMaxValAndIndexInArray = (arr: number[]) => {
+  const max = Math.max(...arr);
+  const maxIndex = arr.indexOf(max);
+  return { max, maxIndex };
+};
+
+export { getDataLines, modulo, getMaxValAndIndexInArray };
