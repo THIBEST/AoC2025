@@ -1,5 +1,7 @@
 import { readFileSync } from "fs";
 
+export type Operator = "+" | "-" | "*" | "/" | "%";
+
 /**
  * Gets the data lines from the input file.
  *
@@ -34,4 +36,28 @@ const getMaxValAndIndexInArray = (
   return { max, maxIndex };
 };
 
-export { getDataLines, modulo, getMaxValAndIndexInArray };
+/**
+ * Performs the specified operation on the given values.
+ *
+ * @param {number[]} values - The numbers to operate on.
+ * @param {Operator} operator - The operation to perform (+, *...).
+ * @returns {number} The result of the operation.
+ */
+const doOperation = (values: number[], operator: Operator): number => {
+  switch (operator) {
+    case "+":
+      return values.reduce((a, b) => a + b);
+    case "-":
+      return values.reduce((a, b) => a - b);
+    case "*":
+      return values.reduce((a, b) => a * b);
+    case "/":
+      return values.reduce((a, b) => a / b);
+    case "%":
+      return values.reduce((a, b) => a % b);
+    default:
+      throw new Error(`Unknown operator: ${operator}`);
+  }
+};
+
+export { doOperation, getDataLines, getMaxValAndIndexInArray, modulo };
